@@ -84,7 +84,7 @@ cf apps
 The app will be accessible via the route `http://product-service.<your-cloud-foundry-domain>/`.
 
 
-### 6. Managing Your Application
+### 6. Managing the Application
 
 Here are some useful commands for managing your deployed Spring Boot application on Cloud Foundry:
 
@@ -108,8 +108,33 @@ This will stop and remove the application from your Cloud Foundry environment. I
 You may need to delete the services manually if they are no longer needed.
 
 
+### 7. Testing the Application
 
+After starting the application, you can use tools like Postman or cURL to interact with the API.
 
+**1. Add a Product**
+
+POST `http://product-service.<your-cloud-foundry-domain>/api/products`
+
+Request Body:
+```json
+{
+  "id": 1,
+  "name": "Test Product Name",
+  "description": "Test Product description",
+  "price": 10.5
+}
+```
+
+**2. Get All Products**
+
+GET `/api/products`
+
+Example cURL Command:
+
+```bash
+curl http://product-service.<your-cloud-foundry-domain>/api/products
+```
 
 
 
